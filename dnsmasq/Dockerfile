@@ -1,4 +1,4 @@
 FROM alpine
 RUN apk update && apk upgrade
 RUN apk add dnsmasq
-CMD ["dnsmasq -d"]
+CMD ["/usr/sbin/dnsmasq -d"]
