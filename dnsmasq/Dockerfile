@@ -1,8 +1,8 @@
-FROM arm32v7/openjdk:8-jre-alpine
+FROM arm32v7/alpine
 
 COPY qemu-arm-static /usr/bin
 
 RUN apk update && apk upgrade
-RUN apk add unrar p7zip bash
+RUN apk add dnsmasq
 
-CMD ["/bin/bash"]
+CMD ["dnsmasq -d"]
