@@ -3,6 +3,6 @@ FROM arm32v7/alpine
 COPY qemu-arm-static /usr/bin
 
 RUN apk update && apk upgrade
-RUN apk add dnsmasq
+RUN apk --no-cache add dnsmasq
 
-CMD ["dnsmasq -d"]
+CMD ["/usr/sbin/dnsmasq", "-d"]
